@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Archives: 2019/11 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2019/11/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -152,261 +152,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-数据库总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/28/数据库总结/">数据库总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/28/数据库总结/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/11/28/数据库总结/" class="archive-article-date">
   	<time datetime="2019-11-28T07:40:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-28</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#<br>MySQL第一节课</p>
-<p>sql语句的学习<br>       1.1、创建数据库<br>    create database 库名;<br>       1.2、创建表<br>    create table 表名(<br>        字段名1  数据类型  约束<br>        字段名2  数据类型  约束<br>        字段名3  数据类型  约束<br>        )<br>        数据类型：<br>        常用的数据类型<br>            int  整型数据，占四个字节大小<br>            char  字符串数据，需要设置占用的字节个数，是一个固定长度的数据类型<br>            varchar 字符串数据，需要设置占用的字节个数，是一个可变长度的数据类型<br>                可变长度的意思是：内容是多少就占多少个字节，而不是占用自己设置的字节个数<br>            float 小数<br>       2.插入语句<br>      insert into 表名(字段名1,字段名2)<br>        values(数据1，数据2)<br>       3.查询语句<br>      select 字段名1,字段名2… from 表名<br>       4.删除语句<br>        删除库<br>          drop database 库名;<br>        删除表<br>          drop table 表名;<br>        删除表中所有的数据<br>          delete from 表名;<br>        删除表中的某些数据<br>          delete from 表名 where …<br>        5.修改语句<br>    update 表名  set…..   where……<br>修改表的定义的语句<br>            修改表的名字<br>    alter table  旧表名  rename  新表名<br>            修改数据类型<br>    alter table 表名  modify  列名   数据类型<br>            修改列名<br>    alter table 表名 change  旧列名  新列名<br>            删除列<br>    alter table 表名  drop  列名<br>            添加列<br>    alter table 表名  add  新列名   数据类型<br>约束<br>    主键约束(primary key)<br>        主键：一行记录唯一标识，非空，不允许重复<br>    非空约束(not null)<br>    唯一约束(unique)<br>        不允许重复，可为null，但null也不许重复<br>    默认值()<br>    check约束<br>    外键约束(foreign key)<br>        外键：本章表中的一个字段数据，引用另一张表中的主键数据，那么此字段，就称为本张表的外键<br>        例如：成绩表与学生信息表两张表中都会用到学生学号，并且学号是学生信息表的主键，但成绩表<br>        中的学号引用的是学生信息表中的学号，那么学号在成绩表中就被称为外键。</p>
-<p>MySQL第二节课</p>
-<p>数据库设计的三大范式<br>    第一范式：<br>        每个字段的数据都是不可分割的最小的数据单元<br>    第二范式：<br>        每张表只能描述一件事情，每张表必须有主键<br>    第三范式：<br>        非主键字段依赖于主键字段，换句话说，非主键字段与主键字段要直接相关<br>注意：设计表时，尽可能遵守规范，但是，有时为了性能，会牺牲一点规范</p>
-<p>mysql运算符<br>    算术运算符<br>    (+、-、*、/)<br>    比较运算符<br>    (&gt;、&lt;、&gt;=、&lt;=、&lt;&gt;、！=)(&lt;&gt;、！= 两个都是不等于)<br>    逻辑运算符<br>    (and、or)<br>聚合函数<br>    count() 求行数<br>    sum() 求一列的和<br>    avg() 求平均值<br>    max() 求最大值<br>    min() 求最小值<br>mysql需要记住的关键字<br>    in 查询什么什么范围里的数据<br>        name in(‘张三’,’李四’)<br>        name等于张三,name等于李四的数据，全部查询出来<br>    not in<br>        name not in(‘张三’,’李四’)<br>        除了张三李四，其他人的数据全部查询出来<br>    is null<br>    is not null<br>    limit 查询表中的前几行<br>    distinct 去掉某个字段或某几个字段重复的数据<br>    as 给字段起别名<br>    union 查询两张表的并集<br>    between…and…  查询什么什么范围之间的数据</p>
-<p>MySQL第三次课</p>
-<p>order by 排序<br>    ASC是升序<br>    DESC是降序<br>group by 分组<br>groubp by … having … 筛选符合条件的组<br>子查询<br>    查询语句里边嵌套查询语句<br>    子查询的结果作为了外部查询</p>
-<p>连接<br>    普通连接<br>    内连接<br>    inner join…on…<br>    inner join连接两张表<br>    on  后边跟的是连接条件<br>    外连接<br>        左连接<br>            left join…on…<br>            左边那张表数据全部显示<br>            右边那张表只显示匹配上的数据<br>        右连接<br>            right join…on…<br>            右边那张表数据全部显示<br>            左边那张表只显示匹配上的数据<br>        全连接 </p>
-<p>Mysql第四次课</p>
-<p> truncate清空表<br> truncate table 表名<br> is  null 查询字段中为null的数据<br> is not null 查询出字段中非空的数据<br> name          name is not null<br> 张三<br> null<br> 李四<br> 王五<br> null</p>
-<p> 模糊查询<br>    like<br>    % 代表一个或多个字符<br>    _ 代表一个字符<br> exists()存在<br>    exists里边括住的是一个<br>  查询语句,如果查询语句有结果，<br>  外部查询就正常执行，如果没结果，<br>  外部查询不执行<br> not exists</p>
-<p>Mysql第五次课</p>
-<pre><code>数据库的优化与事务
-数据库优化的作用
-    通过优化提高查询效率
-如何优化：
-    其中一项内容就是添加索引
-什么是索引？
-    索引相当于为表中某个字段或某几个字段添加一个目录
-索引的分类
-    普通索引
-    唯一索引
-        添加唯一约束，会默认添加唯一索引
-    主键索引
-        添加主键约束会默认添加主键索引
-    组合索引
-    全文索引
-    空间索引
-    #创建索引的方式
-    1.创建表的同时，添加索引
-    2.alter table
-    3.create index
-注意：
-    索引不是越多越好，经常用来查询的字段创建索引
-二、事务
-    几条语句组成一个整体，要么全部成功，要么全部失败，
-    这几条语句放到一块就称为一个事务
-    其实每条语句都是一个自动提交的事务
-    1.关闭自动提交
-    2.开启事务 begin
-    3.执行语句，如果失败，全部回滚 rollback
-    4.如果全部成功，提交事务 commit
-事务的特性
-    原子性
-        事务是一个整体，要么全部成功，要么全部失败
-    一致性
-        事务执行前后，数据的的状态应该一致的
-    隔离性
-        事务相互独立，互不相影响
-    永久性
-        事务一旦对数据进行更改，造成的影响是永久的
-隔离级别
-    未提交读(read uncommitted)
-    已提交读(read committed)
-    重复读(repeatable read)
-    可串行化(serializable)</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/28/数据库总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019年10月14日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/14/2019年10月14日/">2019年10月14日</a>
+      <a class="archive-article-title" href="/2019/11/28/数据库总结/">数据库总结</a>
     </h1>
   
 
-        
-        <a href="/2019/10/14/2019年10月14日/" class="archive-article-date">
-  	<time datetime="2019-10-14T12:15:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="今天天气很冷"><a href="#今天天气很冷" class="headerlink" title="今天天气很冷"></a>今天天气很冷</h1>
-      
+        <div class="article-info info-on-right">
+          
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/14/2019年10月14日/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-14T10:13:09.171Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/14/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -428,9 +214,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
